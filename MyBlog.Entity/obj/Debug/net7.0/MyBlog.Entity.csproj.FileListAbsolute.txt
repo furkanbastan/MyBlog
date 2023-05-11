@@ -1,0 +1,12 @@
+C:\Users\bbast\OneDrive\Masaüstü\MyBlog\MyBlog.Entity\bin\Debug\net7.0\MyBlog.Entity.deps.json
+C:\Users\bbast\OneDrive\Masaüstü\MyBlog\MyBlog.Entity\bin\Debug\net7.0\MyBlog.Entity.dll
+C:\Users\bbast\OneDrive\Masaüstü\MyBlog\MyBlog.Entity\bin\Debug\net7.0\MyBlog.Entity.pdb
+C:\Users\bbast\OneDrive\Masaüstü\MyBlog\MyBlog.Entity\obj\Debug\net7.0\MyBlog.Entity.csproj.AssemblyReference.cache
+C:\Users\bbast\OneDrive\Masaüstü\MyBlog\MyBlog.Entity\obj\Debug\net7.0\MyBlog.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bbast\OneDrive\Masaüstü\MyBlog\MyBlog.Entity\obj\Debug\net7.0\MyBlog.Entity.AssemblyInfoInputs.cache
+C:\Users\bbast\OneDrive\Masaüstü\MyBlog\MyBlog.Entity\obj\Debug\net7.0\MyBlog.Entity.AssemblyInfo.cs
+C:\Users\bbast\OneDrive\Masaüstü\MyBlog\MyBlog.Entity\obj\Debug\net7.0\MyBlog.Entity.csproj.CoreCompileInputs.cache
+C:\Users\bbast\OneDrive\Masaüstü\MyBlog\MyBlog.Entity\obj\Debug\net7.0\MyBlog.Entity.dll
+C:\Users\bbast\OneDrive\Masaüstü\MyBlog\MyBlog.Entity\obj\Debug\net7.0\refint\MyBlog.Entity.dll
+C:\Users\bbast\OneDrive\Masaüstü\MyBlog\MyBlog.Entity\obj\Debug\net7.0\MyBlog.Entity.pdb
+C:\Users\bbast\OneDrive\Masaüstü\MyBlog\MyBlog.Entity\obj\Debug\net7.0\ref\MyBlog.Entity.dll

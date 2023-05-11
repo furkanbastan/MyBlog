@@ -1,0 +1,108 @@
+@model List<CategoryDto>
+
+@{
+  int i = 0;
+}
+
+<!-- Add Category -->
+<div class="container pt-5">
+  <button type="button" class="btn btn-success container mb-4" data-bs-toggle="modal"
+    data-bs-target="#ekleModal">Kategori Ekle</button>
+
+  <div class="modal fade" id="ekleModal" tabindex="-1" aria-labelledby="ekleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Kategoriyi Ekle</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form asp-action="Add" asp-controller="Category" method="post" asp-area="Admin" class="row g-3 my-2">
+            <div class="col-12">
+              <label for="inputName" class="form-label">Kategori Adını Giriniz...</label>
+              <input type="text" class="form-control" id="inputName" name="Name" placeholder="Kategori İsmini Giriniz.">
+              <span asp-validation-summary="All"></span>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+              <button type="submit" value="send" class="btn btn-success">Kaydet</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- List Category -->
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Kategori Adı</th>
+        <th scope="col">Oluşturan Kişi</th>
+        <th scope="col">Oluşturulma Tarihi</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (; i < Model.Count; i++)
+      {
+        <tr>
+          <th scope="row">@i</th>
+          <td>@Model[i].Name</td>
+          <td>@Model[i].CreatedBy</td>
+          <td>@Model[i].CreatedDate</td>
+          <td>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target='@String.Concat("#updateModal",i)'>Düzenle</button>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target='@String.Concat("#silModal",i)'>Sil</button>
+          </td>
+        </tr>
+        <div class="modal fade" id='@String.Concat("updateModal",i)' tabindex="-1" aria-labelledby="düzenleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Kategoriyi Düzenle</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <form asp-action="Update" asp-controller="Category" method="post" asp-area="Admin" class="row g-3 my-2">
+                <input id="inputId" type="hidden" name="Id" class="form-control" value="@Model[i].Id">
+                <div class="col-12">
+                  <label for="inputName" class="form-label">Kategori İsmi</label>
+                  <input id="inputName" type="text" class="form-control" name="Name" placeholder="Kategori İsmini Giriniz." value="@Model[i].Name">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                  <button type="submit" value="send" class="btn btn-success">Kaydet</button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id='@String.Concat("silModal",i)' tabindex="-1" aria-labelledby="silModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Kategoriyi Silmek İstediğinize Emin Misiniz ?</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+              <a id="deleteId" type="button" class="btn btn-danger" asp-action="Delete" asp-controller="Category" asp-area="Admin" asp-route-id="@Model[i].Id">Sil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </tbody>
+  </table>
+</div>

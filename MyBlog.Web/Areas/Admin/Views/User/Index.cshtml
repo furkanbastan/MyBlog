@@ -1,0 +1,6 @@
+@model List<UserDto>
+
+@foreach (var user in Model)
+{
+    <p>@user.Id  @user.Email  @user.FirstName  @user.LastName  @user.PhoneNumber  @user.Role</p>
+}

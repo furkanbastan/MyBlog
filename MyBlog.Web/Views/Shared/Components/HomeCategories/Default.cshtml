@@ -1,0 +1,10 @@
+@using MyBlog.Entity.DTOs.Categories
+@model List<CategoryDto>
+
+
+<ul class="list-unstyled mb-0">
+    @foreach (var category in Model)
+    {
+        <li><a href="#!">@category.Name</a></li>
+    }
+</ul>
